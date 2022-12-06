@@ -14,9 +14,6 @@
         $$varname = 600.5;
         echo "$nume - a mai facut: $bani de bani!<br />";
         echo AN_FONDARE;
-    ?>
-
-    <?php
 
         $cleardb_url = parse_url(getenv("CLEAR_DB_DATABASE_URL"));
         $cleardb_server = $cleardb_url["host"];
