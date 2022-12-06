@@ -28,13 +28,22 @@
         $active_group = 'default';
         $query_builder = TRUE;
 
-        $conn = mysqli_connect($cleardb_server, $cleardb_user, $cleardb_pass, $cleardb_db);
+        $conn = new mysqli($cleardb_server, $cleardb_user, $cleardb_pass, $cleardb_db);
+        if($conn->connect_error) {
+            die("Connection Failed" . $conn->connect_error);
+        }
+
         $sql = "SELECT prenume from test_table";
         $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $prenume = $row['prenume'];
-        echo "Salut $prenume!";
-        // conn->close();
+
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()) {
+                echo "nume: " . $row['nume'] . " - Prenume:" . $row['prenume'] . "<br />";
+            }
+        } else {
+            echo "0 results";
+        }
+        $conn->close();
     ?>
 </body>
 </html>
