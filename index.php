@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>ow damn, php</title>
+    <title>ow LORD, php</title>
 </head>
 <body>
     <?php
