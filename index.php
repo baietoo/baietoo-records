@@ -19,6 +19,7 @@
     <?php
 
         $cleardb_url = parse_url(getenv("CLEAR_DB_DATABASE_URL"));
+        echo "Database URL: $cleardb_url <br />";
         $cleardb_server = $cleardb_url["host"];
         $cleardb_user = $cleardb_url["user"];
         $cleardb_pass = $cleardb_url["pass"];
