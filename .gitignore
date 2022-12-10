@@ -6,7 +6,7 @@
 # ------------------------------------------------------------------------------
 # Common files ignored across the repository
 # ------------------------------------------------------------------------------
-
+.DS_Store
 # Backup copies created by various editors or development tools
 *~
 
