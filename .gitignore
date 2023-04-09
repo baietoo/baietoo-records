@@ -4,9 +4,15 @@
 # .git/info/exclude in the cloned repository or a global .gitignore file.
 
 # ------------------------------------------------------------------------------
+# USER DEFINED
+# ------------------------------------------------------------------------------
+book_oreilly
+.DS_Store
+
+# ------------------------------------------------------------------------------
 # Common files ignored across the repository
 # ------------------------------------------------------------------------------
-.DS_Store
+
 # Backup copies created by various editors or development tools
 *~
 
