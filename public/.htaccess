@@ -1,8 +1,17 @@
+# <IfModule mod_rewrite.c>
+#     Options -Multiviews
+#     RewriteEngine On
+#     RewriteBase /baietoo-records/public
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]  
+# </IfModule>
+
 <IfModule mod_rewrite.c>
     Options -Multiviews
     RewriteEngine On
-    RewriteBase /baietoo-records/public
+    RewriteBase /baietoo-records
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]  
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 </IfModule>
