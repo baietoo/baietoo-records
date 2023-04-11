@@ -8,7 +8,12 @@
 # </IfModule>
 
 <IfModule mod_rewrite.c>
+    # not tested on heroku
+    Options -Multiviews
     RewriteEngine On
+    # for local
+    # RewriteBase /baietoo-records
+    # for heroku
     RewriteBase /
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
