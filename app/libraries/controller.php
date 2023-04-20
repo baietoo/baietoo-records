@@ -12,7 +12,7 @@
             return new $model();
         }
         // load view
-        public function view($view, $data){
+        public function view($view, $data = []){
             // check for view file
             $view_file = '../app/views/' . $view . '.php';
             if(file_exists($view_file)){

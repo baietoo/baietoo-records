@@ -9,6 +9,7 @@
 book_oreilly
 .DS_Store
 vendor
+public/.htaccess
 
 # ------------------------------------------------------------------------------
 # Common files ignored across the repository
