@@ -4,8 +4,9 @@
         }
         public function index(){
             $data = [
-                'title' => 'Welcome'
+                'title' => 'Welcome',
             ];
+
             $this->view('pages/index', $data);
         }
         public function about(){

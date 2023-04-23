@@ -18,6 +18,7 @@
         <nav class="navbar navbar-light bg-dark" style="background-color: #e3f2fd;">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
+                    <!-- TODO: fix favicon -->
                     <!-- <img src="./img/SVG/br_logo_white_horizontal_logo-cropped.svg" alt="" width="150" height="50"> -->
                     <img src="<?php echo NAV_IMAGE ?>" alt="nav brand image" width="150" height="50">
                 </a>
