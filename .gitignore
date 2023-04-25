@@ -10,7 +10,7 @@ book_oreilly
 .DS_Store
 vendor
 public/.htaccess
-
+*.htaccess
 # ------------------------------------------------------------------------------
 # Common files ignored across the repository
 # ------------------------------------------------------------------------------
@@ -303,7 +303,3 @@ tmp-php.ini
 !/ext/fileinfo/magicdata.patch
 !/ext/pcre/pcre2lib/config.h
 !/win32/build/Makefile
-public/.htaccess
-public/.htaccess
-public/.htaccess
-.htaccess
