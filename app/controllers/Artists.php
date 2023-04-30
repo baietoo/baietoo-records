@@ -50,7 +50,7 @@
                 if(empty($data['confirm_password'])){
                     $data['confirm_password_err'] = 'Please confirm password';
                 } else {
-                    if($data['password'] != $data['confirm_password']){
+                    if($password != $data['confirm_password']){
                         $data['confirm_password_err'] = 'Passwords do not match';
                     }
                 }
@@ -66,8 +66,8 @@
                     $data['password'] = password_hash($password, PASSWORD_DEFAULT);
 
                     // Register Artist
-                    if($this->userModel->register($data)){
-                        
+                    if($this->artistModel->register($data)){
+                        redirect('artists/login');
                     } else {
                         die('Something went wrong');
                     };

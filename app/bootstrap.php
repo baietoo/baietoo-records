@@ -7,9 +7,12 @@
     require_once 'libraries/controller.php';
     require_once 'libraries/database.php';
 
+    // load helper functions
+    require_once 'helpers/url_helper.php'
+
     // Autoload Core Libraries(replaces the above)
 
-    // HEROKU ERROR:
+    // TODO: HEROKU ERROR:
     // 2023-04-20T06:55:07.390485+00:00 app[web.1]: 
     // [20-Apr-2023 06:55:07 UTC] PHP Fatal error:
     //  Uncaught Error: Failed opening required 'libraries/Core.php' (include_path='.:')
