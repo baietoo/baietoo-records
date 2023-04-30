@@ -12,16 +12,16 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?php echo URL_ROOT; ?>">Home</a>
+                    <a class="nav-link" aria-current="page" href="<?php echo URL_ROOT; ?>">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URL_ROOT; ?>/pages/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL_ROOT; ?>/artist/login">Login</a>
+                    <a class="nav-link" href="<?php echo URL_ROOT; ?>/artists/login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL_ROOT; ?>/artist/register">Register</a>
+                    <a class="nav-link" href="<?php echo URL_ROOT; ?>/artists/register">Register</a>
                 </li>
 
                 <!-- TBD what to add here -->
