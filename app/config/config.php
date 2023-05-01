@@ -8,7 +8,7 @@
         define('URL_ROOT', 'http://localhost/baietoo-records');
         $url = 'mysql://b78a0ed438279c:aea489eb@eu-cdbr-west-03.cleardb.net/heroku_466887521e2d644?reconnect=true';
     } else {
-        define('URL_ROOT', '/');
+        define('URL_ROOT', 'https://baietoo-records.herokuapp.com');
         // DATABASE URL
         define('URL', parse_url(getenv("CLEARDB_DATABASE_URL")));
     }
