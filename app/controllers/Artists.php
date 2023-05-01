@@ -67,6 +67,7 @@
 
                     // Register Artist
                     if($this->artistModel->register($data)){
+                        flash('register_success', 'You are registered and can log in');
                         redirect('artists/login');
                     } else {
                         die('Something went wrong');
@@ -111,13 +112,22 @@
                 ];
 
                 // validate email
-                if(empty($data['email'])){
+                $email = $data['email'];
+                if(strlen($email) === 0){
                     $data['email_err'] = 'Please enter email';
                 }
 
                 // validate password
-                if(empty($data['password'])){
+                $password = $data['password'];
+                if(strlen($password) === 0){
                     $data['password_err'] = 'Please enter password';
+                }
+
+                // check for user/email
+                if($this->artistModel->findArtistByEmail($email)){
+                    // artist found
+                } else {
+                    $data['email_err'] = 'No artist found';
                 }
 
                 // Make sure errors are empty
@@ -125,11 +135,22 @@
                if(empty($data['email_err'])
                && empty($data['password_err'])){
                    // validated
-                   die('SUCCESS');
-           } else {
+                   // check and set logged in artist
+                    $loggedInArtist = $this->artistModel->login(
+                        $email, $password
+                    );
+                    if($loggedInArtist){
+                        // Create Session
+                        die('SUCCESS');
+
+                    } else {
+                        $data['password_err'] = 'Password incorrect';
+                        $this->view('artists/login', $data);
+                    }
+                } else {
                // load view with errors
-               $this->view('artists/login', $data);
-           }
+                    $this->view('artists/login', $data);
+                }
 
             } else {
                 // Init data
