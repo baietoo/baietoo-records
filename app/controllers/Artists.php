@@ -141,7 +141,7 @@
                     );
                     if($loggedInArtist){
                         // Create Session
-                        die('SUCCESS');
+                        $this->createArtistSession($loggedInArtist);
 
                     } else {
                         $data['password_err'] = 'Password incorrect';
@@ -166,4 +166,19 @@
             }
         }
 
+        public function createArtistSession($artist){
+            $_SESSION['artist_id'] = $artist->id;
+            $_SESSION['artist_email'] = $artist->email;
+            $_SESSION['artist_name'] = $artist->name;
+            redirect('posts');
+        }
+
+        public function logout(){
+            unset($_SESSION['artist_id']);
+            unset($_SESSION['artist_email']);
+            unset($_SESSION['artist_name']);
+            session_destroy();
+            redirect('artists/login');
+        }
+        
     }

@@ -30,4 +30,10 @@
             unset($_SESSION[$session_class]);
         }
     }
+    function isLoggedIn(){
+        if(isset($_SESSION['artist_id'])){
+            return true;
+        }
+        return false;
+    }
 ?>

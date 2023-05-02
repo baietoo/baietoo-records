@@ -17,12 +17,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URL_ROOT; ?>/pages/about">About</a>
                 </li>
+                <!-- CHECK IF USER IS LOGGED IN -->
+                <?php if(isset($_SESSION['artist_id'])) : ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URL_ROOT; ?>/artists/logout">Logout</a>
+                </li>                    
+                <?php else : ?>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URL_ROOT; ?>/artists/login">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URL_ROOT; ?>/artists/register">Register</a>
                 </li>
+                <?php endif;?>
 
                 <!-- TBD what to add here -->
                 <!-- <li class="nav-item dropdown">
