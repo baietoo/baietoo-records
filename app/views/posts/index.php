@@ -1,17 +1,25 @@
 <?php require APP_ROOT . '/views/inc/header.php'; ?>
 
-<div class="row">
-    <div class="col-md-6">
+<div class="row mb-3 justify-content-between">
+    <div class="col-4">
         <h1>Posts</h1>
     </div>
-    <div class="col-md-6">
+    <div class="col-4">
         <a href="<?php echo URL_ROOT ?>/posts/add" class="btn btn-primary pull-right">
             <i class="fa-solid fa-pen-nib"></i> Add post
         </a>
     </div>
 </div>
 
-<h1><?php echo $data['title']; ?></h1>
-<p><?php echo $data['description']; ?></p>
+<?php foreach($data['posts'] as $post) : ?>
+    <div class="card card-body mb-3">
+        <h4 class="card-title"><?php echo $post->title; ?></h4>
+        <div class="bg-light p-2 mb-3">
+            Written by <?php echo $post->name; ?> on <?php echo $post->p_date_created;?>
+        </div>
+        <p class="card-text"> <?php echo $post->body; ?> </p>
+        <a href="<?php echo URL_ROOT; ?>/posts/show/<?php echo $post->postId; ?>" class="btn btn-dark">More</a>
+    </div>
+<?php endforeach; ?>
 
 <?php require APP_ROOT . '/views/inc/footer.php'; ?>
