@@ -12,7 +12,7 @@
                 post.id as postId,
                 artist.id as artistId,
                 post.date_created as p_date_created,
-                artist.date_created as a_date_created
+                artist.date_created as a_date_created,
                 FROM post
                 INNER JOIN artist
                 ON post.artist_id = artist.id

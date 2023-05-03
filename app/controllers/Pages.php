@@ -3,6 +3,9 @@
         public function __construct(){
         }
         public function index(){
+            if(isLoggedIn()){
+                redirect('posts');
+            }
             $data = [
                 'title' => 'Baietoo Records',
                 'description' => 'Cea mai faimoasa casa de discuri de la adresa https://baietoo-records.herokuapp.com/pages/about'
