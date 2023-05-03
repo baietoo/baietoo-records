@@ -13,3 +13,6 @@
 - Formular de contact, cu posibilitatea trimiterii de email-uri.
 - Integrarea de informatii (nu pagini în întregime, ci doar elemente ale acestora) de pe alte site-uri.
 - Terminarea sesiunii.
+
+## TECH DEBTS:
+* nume artist ar trebui sa fie unic
