@@ -39,7 +39,30 @@
             }
             return false;
         }
+
+        public function updatePost($data){
+            $this->db->query(
+                "UPDATE post
+                SET
+                    title = :title,
+                    body = :body
+                WHERE
+                    id = :id"
+            );
+            // bind values
+            $this->db->bind(':id', $data['id']);
+            $this->db->bind(':title', $data['title']);
+            $this->db->bind(':body', $data['body']);
+        
+            // Execute
+            if ($this->db->execute()) {
+                return true;
+            }
+            return false;
+        }
         public function getPostById($id){
+            # TODO: why passed as array?
+            $id = $id[0];
             $this->db->query('SELECT * FROM post WHERE id = :id');
             $this->db->bind(':id', $id);
 
