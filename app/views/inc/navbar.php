@@ -19,6 +19,11 @@
                 </li>
                 <!-- CHECK IF USER IS LOGGED IN -->
                 <?php if(isset($_SESSION['artist_id'])) : ?>
+                
+                <li class="nav-item">
+                    <?php $artist_name = $_SESSION['artist_name'];?>
+                    <a class="nav-link" href="#">Welcome <?php echo $artist_name;?></a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URL_ROOT; ?>/artists/logout">Logout</a>
                 </li>                    

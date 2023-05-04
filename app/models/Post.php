@@ -69,5 +69,23 @@
             $row = $this->db->single();
             return $row;
         }
+
+        public function deletePost($id){
+            # TODO: why passed as array?
+            $id = $id[0];
+            $this->db->query(
+                "DELETE FROM post
+                WHERE
+                    id = :id"
+            );
+            // bind values
+            $this->db->bind(':id', $id);
+        
+            // Execute
+            if ($this->db->execute()) {
+                return true;
+            }
+            return false;
+        }
     }
 ?>

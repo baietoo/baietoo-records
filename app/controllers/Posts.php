@@ -133,5 +133,24 @@ class Posts extends Controller
         }
     }
 
+    public function delete($id){
+        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $post = $this->postModel->getPostById($id);
+            // check post owner
+            if($post->artist_id != $_SESSION['artist_id']){
+                redirect('posts');
+            }
+
+            if($this->postModel->deletePost($id)){
+                flash('post_message', 'Post Removed');
+                redirect('posts');
+            } else {
+                die('Something went wrong');
+            }
+        } else {
+            redirect('posts');
+        }
+    }
+
 }
 ?>
