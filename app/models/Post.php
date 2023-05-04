@@ -39,5 +39,12 @@
             }
             return false;
         }
+        public function getPostById($id){
+            $this->db->query('SELECT * FROM post WHERE id = :id');
+            $this->db->bind(':id', $id);
+
+            $row = $this->db->single();
+            return $row;
+        }
     }
 ?>
