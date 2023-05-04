@@ -49,6 +49,16 @@
             }
             return false;
         }
+
+        public function getArtistById($id){
+            $this->db->query('SELECT * FROM artist WHERE id = :id');
+            // bind values
+            $this->db->bind(':id', $id);
+
+            $row = $this->db->single();
+
+            return $row;
+        }
         
     }
 ?>

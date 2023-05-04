@@ -7,6 +7,7 @@ class Posts extends Controller
             redirect('artists/login');
         }
         $this->postModel = $this->model('Post');
+        $this->artistModel = $this->model('Artist');
     }
     public function index()
     {
@@ -65,9 +66,12 @@ class Posts extends Controller
         }
     }
     public function show($id){
-        $post = $this->postModel->getPostById($id);
+        // TODO: why does $id store an array?
+        $post = $this->postModel->getPostById($id[0]);
+        $artist = $this->artistModel->getArtistById($post->artist_id);
         $data = [
-            'post' => $post
+            'post' => $post,
+            'artist' => $artist
         ];
         $this->view('posts/show', $data);
     }
