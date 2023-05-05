@@ -11,6 +11,11 @@ book_oreilly
 vendor
 public/.htaccess
 *.htaccess
+public/img/favicon_Black.ico.zip
+public/img/favicon_Black_v2.ico/
+public/img/favicon_white.ico.zip
+public/img/favicon_white_v2.ico/
+
 # ------------------------------------------------------------------------------
 # Common files ignored across the repository
 # ------------------------------------------------------------------------------
