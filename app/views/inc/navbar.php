@@ -14,9 +14,9 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="<?php echo URL_ROOT; ?>">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo URL_ROOT; ?>/pages/about">About</a>
-                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="<?php // echo URL_ROOT; ?>/pages/about">About</a>
+                </li> -->
                 <!-- CHECK IF USER IS LOGGED IN -->
                 <?php if(isset($_SESSION['artist_id'])) : ?>
                 

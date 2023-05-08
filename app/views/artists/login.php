@@ -12,19 +12,21 @@
                 <div class="mb-3">
                     <label for="InputEmail" name="email" class="form-label">Adresa email</label>
                     <input type="email"
-                    class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>"
-                    value="<?php echo $data['email']; ?>"
-                    id="InputEmail" name="email" aria-describedby="emailHelp">
-                    <span class="invalid-feedback"> <?php echo $data['email_err']; ?> </span>
+                        class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>"
+                        value="<?php echo $data['email']; ?>" id="InputEmail" name="email" aria-describedby="emailHelp">
+                    <span class="invalid-feedback">
+                        <?php echo $data['email_err']; ?>
+                    </span>
                 </div>
 
                 <div class="mb-3">
                     <label for="Password" name="password" class="form-label">Parola</label>
                     <input type="password"
-                    class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>"
-                    value="<?php echo $data['password']; ?>"
-                    id="Password" name="password" >
-                    <span class="invalid-feedback"> <?php echo $data['password_err']; ?> </span>
+                        class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>"
+                        value="<?php echo $data['password']; ?>" id="Password" name="password">
+                    <span class="invalid-feedback">
+                        <?php echo $data['password_err']; ?>
+                    </span>
                 </div>
 
                 <!-- <div class="mb-3 form-check">

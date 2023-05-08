@@ -13,6 +13,12 @@
       <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
       <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
     </ul>
+    <ul class="nav col-md-4 justify-content-end">
+
+    <li class="nav-item"><a href="<?php echo URL_ROOT; ?>/pages/about" class="nav-link px-2 text-body-secondary">About</a></li>
+      <li class="nav-item"><a href="<?php echo URL_ROOT; ?>/pages/contact" class="nav-link px-2 text-body-secondary">Contact</a></li>
+    </ul>
+
     </footer>
 
 </div> 
