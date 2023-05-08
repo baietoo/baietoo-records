@@ -5,17 +5,18 @@
 
 - [x] Prin intermediul aplicatiei, se vor efectua operatii de stergere, adaugare, citire asupra bazei de date.
 - [x] Va exista o pagina de autentificare/înregistrare de utilizatori.
-- [ ] Formular de contact, cu posibilitatea trimiterii de email-uri.
+- [x] Formular de contact, cu posibilitatea trimiterii de email-uri.
+- [x] Aplicatia va contine mai multe pagini dinamice cu legaturi între ele. 
 - [ ] Vor exista mai multe categorii de utilizatori.
   - [x] artist
   - [ ] membru
   - [ ] manager
   - [ ] Fiecare categorie va avea anumite actiuni specifice.
-- [x] Aplicatia va contine mai multe pagini dinamice cu legaturi între ele. 
 - [ ] Va exista posibilitatea de generare si vizualizare de rapoarte (nu doar HTML si PHP).
 - [ ] Elemente statistice ale site-ului: vizitatori, accesari etc.
 - [ ] Integrarea de informatii (nu pagini în întregime, ci doar elemente ale acestora) de pe alte site-uri.
-  - [ ] google maps location
+  - [ ] google maps location pe about
+  - [ ] altceva?
 - [x] Terminarea sesiunii.
 
 ## TECH DEBTS:

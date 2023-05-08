@@ -30,7 +30,7 @@ class Pages extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
-                'title' => trim($_POST['email']),
+                'email' => trim($_POST['email']),
                 'body' => trim($_POST['body']),
                 // 'artist_id' => trim($_SESSION['artist_id']),
                 'title_err' => '',
@@ -38,8 +38,8 @@ class Pages extends Controller
             ];
 
             // validate email
-            if (strlen($data['title']) === 0) {
-                $data['title_err'] = 'Please enter email';
+            if (strlen($data['email']) === 0) {
+                $data['email_err'] = 'Please enter email';
             }
             // validate bodt
             if (strlen($data['body']) === 0) {
@@ -49,10 +49,11 @@ class Pages extends Controller
             // make sure no errors
             // if(empty($data['body_err']) && empty($data['title_err'])){
 
-            if (strlen($data['body_err']) === 0 && strlen($data['title_err']) === 0) {
+            if (strlen($data['body_err']) === 0 && strlen($data['email_err']) === 0) {
                 // Validated
-                if ($this->postModel->addPost($data)) {
-                    flash('post_message', 'mail sent');
+                if (sendEmail($data)) {
+                    $mesaj = 'Formularul de contact a fost trimis cu succes!';
+                    flash('post_message', $mesaj);
                     redirect('posts');
                 } else {
                     die('Something went wrong');
