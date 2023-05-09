@@ -1,6 +1,6 @@
 <?php
 # Include the Autoloader (see "Libraries" for install instructions)
-require_once(__DIR__.'/../../vendor/autoload.php');
+require_once(APP_ROOT . '/../vendor/autoload.php');
 // require_once 'helpers/email_mg.php';
 use Mailgun\Mailgun;
 
