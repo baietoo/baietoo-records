@@ -25,9 +25,23 @@
         <p class="card-text">
             <?php echo $post->body; ?>
         </p>
-        <!-- TODO: play a song not working yet, how to get the blob from mysql -->
-        <!-- upload song to a folder and store filepath to mysql -->
-        <!-- then include it as audio here -->
+
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="h5 font-weight-bold">
+                    <?php echo $post->name; ?> -
+                    <?php echo $post->title; ?>
+                </h5>
+                <?php $audio_src = "public/songs/" . $post->song_filename; ?>
+                <audio controls src="<?php echo $audio_src; ?>">
+                    <a href="<?php echo $audio_src; ?>">
+                        Download audio
+                    </a>
+                </audio>
+
+            </div>
+        </div>
+
 
         <a href="<?php echo URL_ROOT; ?>/posts/show/<?php echo $post->postId; ?>" class="btn btn-dark">More</a>
     </div>

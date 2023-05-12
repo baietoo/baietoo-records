@@ -9,11 +9,13 @@
 - [x] Aplicatia va contine mai multe pagini dinamice cu legaturi între ele. 
 - [ ] Vor exista mai multe categorii de utilizatori.
   - [x] artist
-  - [ ] membru
-  - [ ] manager
+  - [ ] admin
+    - [ ] incarca emailurile primite din mailgun intr-o pagina noua cu toate contactele primite
   - [ ] Fiecare categorie va avea anumite actiuni specifice.
 - [ ] Va exista posibilitatea de generare si vizualizare de rapoarte (nu doar HTML si PHP).
 - [ ] Elemente statistice ale site-ului: vizitatori, accesari etc.
+  - [ ] integreaza melodii pe site
+  - [ ] de cate ori a fost melodia ascultata
 - [x] Integrarea de informatii (nu pagini în întregime, ci doar elemente ale acestora) de pe alte site-uri.
   - [x] google maps location pe about
   - [x] cateva detalii despre adresa
