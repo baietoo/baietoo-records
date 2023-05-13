@@ -32,7 +32,7 @@
                     <?php echo $post->name; ?> -
                     <?php echo $post->title; ?>
                 </h5>
-                <?php $audio_src = "public/songs/" . $post->song_filename; ?>
+                <?php $audio_src = getFromBucket($post->song_filename); ?>
                 <audio controls src="<?php echo $audio_src; ?>">
                     <a href="<?php echo $audio_src; ?>">
                         Download audio

@@ -11,6 +11,7 @@
     require_once 'helpers/url_helper.php';
     require_once 'helpers/session_helper.php';
     require_once 'helpers/email_mg.php';
+    require_once 'helpers/aws_bkt_helper.php';
 
     // require_once 'vendor/autoload.php';
     // Autoload Core Libraries(replaces the above)

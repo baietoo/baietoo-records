@@ -1,18 +1,18 @@
 <?php
     // App Root
     define('APP_ROOT', dirname(dirname(__FILE__)) );
-    // Public ROOT
-    define('PUBLIC_ROOT', dirname(APP_ROOT) . '/public');
     // URL Root 
-    // TODO: fix for heroku
-    // if running on localhost
     if($_SERVER['SERVER_NAME'] == 'baietoo-records.test'){
         define('URL_ROOT', "http://{$_SERVER['HTTP_HOST']}");
         $url = 'mysql://b78a0ed438279c:aea489eb@eu-cdbr-west-03.cleardb.net/heroku_466887521e2d644?reconnect=true';
     } else {
         define('URL_ROOT', 'https://baietoo-records.herokuapp.com');
         // DATABASE URL
-        define('URL', parse_url(getenv("CLEARDB_DATABASE_URL")));
+        $url = getenv("CLEARDB_DATABASE_URL");
+            // AWS BUCKET DETAILS
+        define('S3_BUCKET', getenv('S3_BUCKET'));
+        define('AWS_ACCESS_KEY_ID', getenv('AWS_ACCESS_KEY_ID'));
+        define('AWS_SECRET_ACCESS_KEY', getenv('AWS_SECRET_ACCESS_KEY'));
     }
     // Site Name
     define('SITE_NAME', 'BaietooRecords');
@@ -28,5 +28,6 @@
     define('NAV_IMAGE', URL_ROOT . '/public/img/SVG/br_logo_white_horizontal_logo-cropped.svg');
     // Favicon
     define('FAVICON', URL_ROOT . '/public/img/favicon_blk/favicon.ico');
+
 
 ?>

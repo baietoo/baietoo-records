@@ -5,7 +5,8 @@
         "kriswallsmith/buzz": "^0.15.0",
         "php-http/curl-client": "^2.3",
         "guzzlehttp/psr7": "^2.5",
-        "php-http/message": "^1.14"
+        "php-http/message": "^1.14",
+        "aws/aws-sdk-php": "~3.0"
     },
     "config": {
         "allow-plugins": {

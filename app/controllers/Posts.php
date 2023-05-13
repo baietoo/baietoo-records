@@ -20,10 +20,6 @@ class Posts extends Controller
 
     public function add()
     {
-        var_dump($_FILES);
-        var_dump(PUBLIC_ROOT);
-        var_dump(PUBLIC_ROOT . '/songs/' . $_FILES['song_filename']['name'] );
-        var_dump($_POST);
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
@@ -50,7 +46,8 @@ class Posts extends Controller
             // if(empty($data['body_err']) && empty($data['title_err'])){
                 
                 if(strlen($data['body_err']) === 0 && strlen($data['title_err']) === 0 && strlen($data['song_filename_err']) === 0){
-                    copy($_FILES['song_filename']['tmp_name'], PUBLIC_ROOT . '/songs/' . $_FILES['song_filename']['name'] );
+                    // upload to bucket
+                    uploadToBucket($_FILES);
                     // Validated
                 if($this->postModel->addPost($data)){
                     flash('post_message', 'Post Added');
@@ -76,6 +73,8 @@ class Posts extends Controller
     public function show($id){
         // TODO: why does $id store an array?
         $post = $this->postModel->getPostById($id);
+        // var_dump($post->song_filename);
+        $post->song_filename = getFromBucket($post->song_filename);
         $artist = $this->artistModel->getArtistById($post->artist_id);
         $data = [
             'post' => $post,
