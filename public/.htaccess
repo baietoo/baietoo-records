@@ -1,21 +1,10 @@
-# <IfModule mod_rewrite.c>
-#     Options -Multiviews
-#     RewriteEngine On
-#     RewriteBase /baietoo-records/public
-#     RewriteCond %{REQUEST_FILENAME} !-d
-#     RewriteCond %{REQUEST_FILENAME} !-f
-#     RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]  
-# </IfModule>
-
 <IfModule mod_rewrite.c>
-    # not tested on heroku
     Options -Multiviews
     RewriteEngine On
-    # for local
-    # RewriteBase /baietoo-records
-    # for heroku
     RewriteBase /
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
 </IfModule>
+php_value post_max_size 10M
+php_value upload_max_filesize 10M

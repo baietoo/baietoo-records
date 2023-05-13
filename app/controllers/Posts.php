@@ -34,7 +34,6 @@ class Posts extends Controller
                 'title_err' => '',
                 'body_err' => ''
             ];
-            var_dump($data['song_filename']);
             // validate title
             if(strlen($data['title']) === 0){
                 $data['title_err'] = 'Please enter title';
@@ -44,7 +43,6 @@ class Posts extends Controller
                 $data['body_err'] = 'Please enter description';
             }
             // validate filename
-            var_dump($data['song_filename']);
             if(strlen($data['song_filename']) === 0){
                 $data['song_filename_err'] = 'Please enter a song file';
             }
