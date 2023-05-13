@@ -20,10 +20,10 @@ class Posts extends Controller
 
     public function add()
     {
-        // var_dump($_FILES);
-        // var_dump(PUBLIC_ROOT);
-        // var_dump(PUBLIC_ROOT . '/songs/' . $_FILES['song_filename']['name'] );
-        // var_dump($_POST);
+        var_dump($_FILES);
+        var_dump(PUBLIC_ROOT);
+        var_dump(PUBLIC_ROOT . '/songs/' . $_FILES['song_filename']['name'] );
+        var_dump($_POST);
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             $data = [
