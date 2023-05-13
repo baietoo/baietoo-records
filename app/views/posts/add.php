@@ -5,7 +5,7 @@
     <p>minim 15 secunde sa ne putem face o idee</p>
 
     <!-- FORM -->
-    <form action="<?php echo URL_ROOT; ?>/posts/add" method="post">
+    <form action="<?php echo URL_ROOT; ?>/posts/add" method="post" enctype="multipart/form-data">
 
         <div class="mb-3">
             <label for="InputTitle" name="title" class="form-label">Song Name</label>
@@ -25,20 +25,20 @@
             </span>
         </div>
 
-        <!-- <div class="mb-3">
-            <label for="song" name="song" class="form-label">Incarca melodia</label>
+        <div class="mb-3">
+            <label for="song_filename" name="song_filename" class="form-label">Incarca melodia</label>
             <input
                 type="file"
-                class="form-control <?php // echo (!empty($data['song_err'])) ? 'is-invalid' : ''; ?>"
-                id="song"
-                name="song"
+                class="form-control <?php echo (!empty($data['song_filename_err'])) ? 'is-invalid' : ''; ?>"
+                id="song_filename"
+                name="song_filename"
                 accept=".mp3, .wav"
                 multiple
-            > <?php // echo $data['song']; ?> 
+            > <?php echo $data['song_filename']; ?> 
             <span class="invalid-feedback">
-                <?php // echo $data['song_err']; ?>
+                <?php echo $data['song_filename_err']; ?>
             </span>
-        </div> -->
+        </div>
 
         <!-- <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">

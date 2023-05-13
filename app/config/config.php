@@ -1,11 +1,13 @@
 <?php
     // App Root
     define('APP_ROOT', dirname(dirname(__FILE__)) );
+    // Public ROOT
+    define('PUBLIC_ROOT', dirname(APP_ROOT) . '/public');
     // URL Root 
     // TODO: fix for heroku
     // if running on localhost
-    if($_SERVER['SERVER_NAME'] == 'localhost'){
-        define('URL_ROOT', "http://{$_SERVER['HTTP_HOST']}/baietoo-records");
+    if($_SERVER['SERVER_NAME'] == 'baietoo-records.test'){
+        define('URL_ROOT', "http://{$_SERVER['HTTP_HOST']}");
         $url = 'mysql://b78a0ed438279c:aea489eb@eu-cdbr-west-03.cleardb.net/heroku_466887521e2d644?reconnect=true';
     } else {
         define('URL_ROOT', 'https://baietoo-records.herokuapp.com');

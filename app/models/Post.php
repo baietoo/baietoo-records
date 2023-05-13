@@ -25,13 +25,14 @@
         public function addPost($data){
             $this->db->query(
                 "INSERT INTO Post
-                (artist_id, title, body)
-                VALUES(:artist_id, :title, :body)"
+                (artist_id, title, body, song_filename)
+                VALUES(:artist_id, :title, :body, :song_filename)"
             );
             // bind values
             $this->db->bind(':artist_id', $data['artist_id']);
             $this->db->bind(':title', $data['title']);
             $this->db->bind(':body', $data['body']);
+            $this->db->bind(':song_filename', $data['song_filename']);
         
             // Execute
             if ($this->db->execute()) {
@@ -45,7 +46,8 @@
                 "UPDATE post
                 SET
                     title = :title,
-                    body = :body
+                    body = :body,
+                    song_filename = :song_filename
                 WHERE
                     id = :id"
             );
@@ -53,6 +55,7 @@
             $this->db->bind(':id', $data['id']);
             $this->db->bind(':title', $data['title']);
             $this->db->bind(':body', $data['body']);
+            $this->db->bind(':song_filename', $data['song_filename']);
         
             // Execute
             if ($this->db->execute()) {
@@ -70,9 +73,11 @@
             return $row;
         }
 
-        public function deletePost($id){
+        public function deletePost($id, $song_filename){
             # TODO: why passed as array?
             $id = $id[0];
+            # delete song from public folder
+            unlink(PUBLIC_ROOT . '/songs/' . $song_filename);
             $this->db->query(
                 "DELETE FROM post
                 WHERE
