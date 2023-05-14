@@ -149,7 +149,7 @@ class Posts extends Controller
                 redirect('posts');
             }
 
-            if($this->postModel->deletePost($id, $post->song_filename)){
+            if($this->postModel->deletePost($id)){
                 flash('post_message', 'Post Removed');
                 redirect('posts');
             } else {

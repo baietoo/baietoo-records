@@ -73,11 +73,9 @@
             return $row;
         }
 
-        public function deletePost($id, $song_filename){
+        public function deletePost($id){
             # TODO: why passed as array?
             $id = $id[0];
-            # delete song from public folder
-            unlink(PUBLIC_ROOT . '/songs/' . $song_filename);
             $this->db->query(
                 "DELETE FROM post
                 WHERE
