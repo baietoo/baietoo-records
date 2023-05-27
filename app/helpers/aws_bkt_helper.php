@@ -39,3 +39,22 @@ function getFromBucket($filename){
     $file_link = $uri->getScheme() . '://' . $uri->getHost() . $uri->getPath();
     return $file_link;
 }
+
+function deleteFromBucket($filename){
+    $bucket = S3_BUCKET?: die('No "S3_BUCKET" config var in found in env!');
+
+    $s3 = new Aws\S3\S3Client([
+        'version'  => '2006-03-01',
+        'region'   => 'eu-central-1',
+        'credentials' => [
+            'key' => AWS_ACCESS_KEY_ID,
+            'secret' => AWS_SECRET_ACCESS_KEY
+        ]
+    ]);
+
+    $result = $s3->deleteObject(array(
+        'Bucket' => $bucket,
+        'Key' => $filename
+    ));
+    var_dump($result);
+}

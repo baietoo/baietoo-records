@@ -15,6 +15,7 @@ public/img/favicon_Black.ico.zip
 public/img/favicon_Black_v2.ico/
 public/img/favicon_white.ico.zip
 public/img/favicon_white_v2.ico/
+public/test_bucket.php
 
 # ------------------------------------------------------------------------------
 # Common files ignored across the repository

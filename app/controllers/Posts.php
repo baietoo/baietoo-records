@@ -144,6 +144,8 @@ class Posts extends Controller
     public function delete($id){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $post = $this->postModel->getPostById($id);
+            # delete form bucket
+            deleteFromBucket($post->song_filename);
             // check post owner
             if($post->artist_id != $_SESSION['artist_id']){
                 redirect('posts');
