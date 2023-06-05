@@ -47,6 +47,7 @@ class Posts extends Controller
                 
                 if(strlen($data['body_err']) === 0 && strlen($data['title_err']) === 0 && strlen($data['song_filename_err']) === 0){
                     // upload to bucket
+                    var_dump($_FILES);
                     uploadToBucket($_FILES);
                     // Validated
                 if($this->postModel->addPost($data)){

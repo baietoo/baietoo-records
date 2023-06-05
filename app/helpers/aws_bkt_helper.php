@@ -13,6 +13,7 @@ function uploadToBucket($files){
             'secret' => AWS_SECRET_ACCESS_KEY
         ]
     ]);
+    var_dump($files);
     $upload = $s3->upload($bucket, $files['song_filename']['name'], fopen($files['song_filename']['tmp_name'], 'rb'), 'public-read');
     // $upload->get('ObjectURL'); // test if upload sucessful
 }
