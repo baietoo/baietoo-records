@@ -24,7 +24,7 @@
 
         public function addPost($data){
             $this->db->query(
-                "INSERT INTO Post
+                "INSERT INTO post
                 (artist_id, title, body, song_filename)
                 VALUES(:artist_id, :title, :body, :song_filename)"
             );

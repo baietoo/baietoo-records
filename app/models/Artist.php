@@ -7,7 +7,7 @@
 
         public function register($data){
             $this->db->query(
-                "INSERT INTO Artist
+                "INSERT INTO artist
                 (name, email, password)
                 VALUES(:name, :email, :password)"
             );
